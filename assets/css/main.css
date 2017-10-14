@@ -1191,10 +1191,11 @@
 /* Header */
 
 	#header {
-		-moz-transition: background 1s ease-in-out, height 0.2s ease-in-out;
+		/*The Header comes down waali Transition*/
+		/*-moz-transition: background 1s ease-in-out, height 0.2s ease-in-out;
 		-webkit-transition: background 1s ease-in-out, height 0.2s ease-in-out;
 		-ms-transition: background 1s ease-in-out, height 0.2s ease-in-out;
-		transition: background 1s ease-in-out, height 0.2s ease-in-out;
+		transition: background 1s ease-in-out, height 0.2s ease-in-out;*/
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -1519,4 +1520,7 @@
 					padding: 1em;
 				}
 
+		}
+		h2.headertekst { /*Look at this*/
+ 			text-align: center;
 		}
