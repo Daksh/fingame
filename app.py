@@ -26,11 +26,11 @@ def hello():
 def makeUser(Name):
     u = userModel(10000,Name)
     du[Name] = u
-    return jsonify(status="done")
+    return jsonify(balance=u.balance,status="done")
 
-@app.route('/withdraw/<Name>/<int:Amt>')
+@app.route('/withdraw/<Name>/<Amt>')
 def withdr(Name,Amt):
-    amt = Amt
+    amt = int(Amt)
     u = du[Name]
     bef = u.balance
     t = u.withdraw(amt)
@@ -38,9 +38,9 @@ def withdr(Name,Amt):
         return jsonify(error="Insufficient Funds")
     return jsonify(error="none",balance=t)
 
-@app.route('/deposit/<Name>/<int:Amt>')
+@app.route('/deposit/<Name>/<Amt>')
 def deposit(Name,Amt):
-    amt = Amt
+    amt = int(Amt)
     u = du[Name]
     bef = u.balance
     t = u.deposit(amt)

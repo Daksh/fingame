@@ -1,8 +1,19 @@
-yourUrl = "http://192.168.43.54:8080";
+yourUrl = "http://192.168.2.9:8080";
+var thisUser = "Blank"
+
+$("#startBtn").click(function(){
+	thisUser = $("#myText").val();
+	$.get(yourUrl+"/createUser/"+thisUser, function(result){
+		$("#res").text(result["balance"]);
+    });
+});
 
 $("#withd").click(function(){
     var txt = $("#inp").val();
-    $.post(yourUrl+"/withdraw", {"amt": txt}, function(result){
+    if(txt==""){
+    	txt = "0";
+    }
+    $.get(yourUrl+"/withdraw/"+thisUser+"/"+txt, function(result){
         if(result["error"]=="none"){
         	$("#res").text(result["balance"]);
         }
@@ -14,7 +25,7 @@ $("#withd").click(function(){
 
 $("#depos").click(function(){
     var txt = $("#inp").val();
-    $.post(yourUrl+"/deposit", {"amt": txt}, function(result){
+    $.get(yourUrl+"/deposit/"+thisUser+"/"+txt, function(result){
         if(result["error"]=="none"){
         	$("#res").text(result["balance"]);
         }
