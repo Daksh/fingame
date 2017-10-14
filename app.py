@@ -8,37 +8,49 @@ app = Flask(__name__)
 app.secret_key="MadeByViresh"
 port = int(os.getenv('VCAP_APP_PORT', 8080))
 
-u = userModel(10000)
+du = {}     # This is a dictionary of users
 
 @app.route('/')
-def omg():
-    return render_template('index.html',amnt=u.balance)
+def home():
+    return render_template('index.html',amnt=0)
+
+@app.route('/<Name>')
+def omg(Name):
+    return render_template('index.html',amnt=du[Name].balance)
 
 @app.route('/endpointS')
 def hello():
     return jsonify(resp="Hello World")
 
-@app.route('/withdraw', methods=['POST'])
-def withdr():
-    if request.method != 'POST':
-        return jsonify(error="Unknown")
-    amt = int(request.form['amt'])
+@app.route('/createUser/<Name>')
+def makeUser(Name):
+    u = userModel(10000,Name)
+    du[Name] = u
+    return jsonify(status="done")
+
+@app.route('/withdraw/<Name>/<int:Amt>')
+def withdr(Name,Amt):
+    amt = Amt
+    u = du[Name]
     bef = u.balance
     t = u.withdraw(amt)
     if(t == bef):
         return jsonify(error="Insufficient Funds")
     return jsonify(error="none",balance=t)
 
-@app.route('/deposit', methods=['POST'])
-def deposit():
-    if request.method != 'POST':
-        return jsonify(error="Unknown")
-    amt = int(request.form['amt'])
+@app.route('/deposit/<Name>/<int:Amt>')
+def deposit(Name,Amt):
+    amt = Amt
+    u = du[Name]
     bef = u.balance
     t = u.deposit(amt)
     if(t == bef):
         return jsonify(error="Unknown Error Ocurred")
     return jsonify(error="none",balance=t)
+
+@app.route('/getBal/<Name>')
+def retBal(Name):
+    return str(du[Name].balance)
 
 
 if __name__ == '__main__':

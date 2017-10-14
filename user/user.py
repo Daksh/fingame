@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
 class userModel:
-	def __init__(self,initBalance):
+	interestRate = 6
+	def __init__(self,initBalance,name):
 		self.balance = initBalance
+		self.name = name
 
 	def withdraw(self, amt):
 		if(self.balance - amt >= 0 ):
