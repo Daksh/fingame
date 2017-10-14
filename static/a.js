@@ -2,11 +2,16 @@ yourUrl = "http://192.168.2.9:8080";
 var thisUser = "Blank"
 
 $("#startBtn").click(function(){
-	thisUser = $("#myText").val();
+	thisUser = $("#myTextMiddle").val();
 	$.get(yourUrl+"/createUser/"+thisUser, function(result){
 		$("#res").text(result["balance"]);
     });
 });
+
+$("#leftSideToggle").click(function(){
+	$("#textLeft").text(thisUser);
+});
+
 
 $("#withd").click(function(){
     var txt = $("#inp").val();
