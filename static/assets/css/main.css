@@ -1345,7 +1345,7 @@
 				}
 
 				#headerl.hide .button.hidden:before, #headerl.preview .button.hidden:before {
-					content: '\f015';
+					content: '\f007';
 					color: #FFF;
 					font-size: 1.5em;
 				}
@@ -1539,8 +1539,8 @@
 				}
 
 				#headerr.hide .button.hidden:before, #headerr.preview .button.hidden:before {
-					content: '\f015';
-					color: #FFF;
+					content: '\f007';
+					color: #ASD;
 					font-size: 1.5em;
 				}
 
