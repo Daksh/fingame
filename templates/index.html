@@ -1,31 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Radius by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 <html>
-    <head>
-        <title>Sample App</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" >
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-    <body bgcolor="yellow">
-        <div id="container">
-            <div class="title">
-                <h1>Welcome to Some Game</h1>
-            </div>
+	<head>
+		<title>FinGame</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-            <div>
-            	<button type="button" id="withd" class="btn btn-primary">Withdraw</button>
-                Amt: <input id="widinp" type="text" placeholder="0">
-            </div>            
-            <div>
-                <button type="button" id="depos" class="btn btn-primary">Deposit</button>
-                Amt: <input id="depinp" type="text" placeholder="0">
-            </div>            
-        </div>
+	</head>
+	<body>
 
-        <br>
-        Balance: <span> {{ amnt }} </span>
-        <div style="text-align: center; margin-bottom: 1%">
-        Created by Deep Web
-        </div>
-        <script src="../static/a.js"></script>
-    </body>
-</html> 
 
+		<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	Balance: <a id="res">{{amnt}}</a>
+        Amount: <input id="inp" type="text" placeholder="0">
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="depos" class="btn btn-primary">Deposit</button><!---->
+        <button type="button" id="withd" class="btn btn-primary">Withdraw</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<div class="content">
+						<h1>Login</h1>
+						<h2>Username <input type = "text" id = "myText" value = "Name" /> </h2>
+						<a href="#" class="button big alt"><span>Let's Go</span></a>
+					</div>
+					<a href="#" class="button hidden"><span>Let's Go</span></a>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<div class="columns">
+
+						<!-- Column 1 (horizontal, vertical, horizontal, vertical) -->
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal1"><img src="../static/images/pic01.jpg" alt="" /></a>
+							</div>
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal" ><img src="../static/images/pic02.jpg" alt="" /></as>
+							</div>
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic03.jpg" alt="" /></a>
+							</div>
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic04.jpg" alt="" /></a>
+							</div>
+
+						<!-- Column 2 (vertical, horizontal, vertical, horizontal) -->
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic06.jpg" alt="" /></a>
+							</div>
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic05.jpg" alt="" /></a>
+							</div>
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic08.jpg" alt="" /></a>
+							</div>
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic07.jpg" alt="" /></a>
+							</div>
+
+						<!-- Column 3 (horizontal, vertical, horizontal, vertical) -->
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic09.jpg" alt="" /></a>
+							</div>
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic12.jpg" alt="" /></a>
+							</div>
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic11.jpg" alt="" /></a>
+							</div>
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic10.jpg" alt="" /></a>
+							</div>
+
+						<!-- Column 4 (vertical, horizontal, vertical, horizontal) -->
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic13.jpg" alt="" /></a>
+							</div>
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic14.jpg" alt="" /></a>
+							</div>
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic15.jpg" alt="" /></a>
+							</div>
+							<div class="image fit">
+								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic16.jpg" alt="" /></a>
+							</div>
+
+					</div>
+				</div>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<a href="#" class="info fa fa-info-circle"><span>About</span></a>
+				<div class="inner">
+					<div class="content">
+						<h3>FinGame</h3>
+						<p>We want to simplify banking for children. We will implement a gamified interface for the users using CORDA api and enjoy learning banking.
+
+The game seeks to simplify transactions and step by step leverage an increasing difficulty in learning the basics of banking, ledgers and loan system.
+
+We planned to build a simpler UI for Corda and a pre-configured set of values for banks and places, so that users can run the simulations directly and start learning about banking from absolutely simple basics.</p>
+					</div>
+					<div class="copyright">
+						<h3>Follow me</h3>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						</ul>
+						&copy; DeepWeb. <!--Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>.-->
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../static/assets/js/jquery.min.js"></script>
+            <script src="../static/a.js"></script>
+			<script src="../static/assets/js/skel.min.js"></script>
+			<script src="../static/assets/js/util.js"></script>
+			<script src="../static/assets/js/main.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+	</body>
+</html>

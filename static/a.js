@@ -1,25 +1,25 @@
-yourUrl = "http://192.168.2.9:8080";
+yourUrl = "http://192.168.43.54:8080";
 
 $("#withd").click(function(){
-    var txt = $("#widinp").val();
+    var txt = $("#inp").val();
     $.post(yourUrl+"/withdraw", {"amt": txt}, function(result){
         if(result["error"]=="none"){
-        	$("span").text(result["balance"]);
+        	$("#res").text(result["balance"]);
         }
         else{
-        	$("span").text(result["error"]);	
+        	$("#res").text(result["error"]);	
         }
     });
 });
 
 $("#depos").click(function(){
-    var txt = $("#depinp").val();
+    var txt = $("#inp").val();
     $.post(yourUrl+"/deposit", {"amt": txt}, function(result){
         if(result["error"]=="none"){
-        	$("span").text(result["balance"]);
+        	$("#res").text(result["balance"]);
         }
         else{
-        	$("span").text(result["error"]);	
+        	$("#res").text(result["error"]);	
         }
     });
 });
