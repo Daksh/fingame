@@ -19,6 +19,7 @@
 		var	$window = $(window),
 			$body = $('body'),
 			$header = $('#header'),
+			$headerl = $('#headerl'),
 			$footer = $('#footer');
 
 		// Disable animations/transitions until the page has loaded.
@@ -60,6 +61,31 @@
 				});
 
 			});
+
+
+
+			$headerl.each( function() {
+
+				var t 		= jQuery(this),
+					button 	= t.find('.button');
+
+				button.click(function(e) {
+
+					t.toggleClass('hide');
+
+					if ( t.hasClass('preview') ) {
+						return true;
+					} else {
+						e.preventDefault();
+					}
+
+				});
+
+			});
+
+
+
+
 
 		// Footer.
 			$footer.each( function() {
