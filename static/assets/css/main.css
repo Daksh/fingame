@@ -1190,6 +1190,396 @@
 
 /* Header */
 
+
+
+	#headerl {
+		/*The Header comes down waali Transition*/
+		-moz-transition: background 1s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+		-webkit-transition: background 1s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+		-ms-transition: background 1s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+		transition: background 1s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		display: -ms-flexbox;
+		-ms-flex-align: center;
+		-ms-flex-pack: center;
+		background: rgba(254, 254, 254, 0.85);
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 10001;
+	}
+
+		#headerl .inner {
+			-moz-transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+			-webkit-transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+			-ms-transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+			transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+			display: -ms-flexbox;
+			-ms-flex-align: center;
+			-ms-flex-pack: center;
+			background: #e74c3c;
+			border-radius: 100%;
+			width: 35em;
+			height: 35em;
+			padding: 4em;
+			text-align: center;
+			box-shadow: 0 0 0 1em #FFF;
+			cursor: default;
+		}
+
+			#headerl .inner .content {
+				-moz-transition: opacity 1s ease-in-out;
+				-webkit-transition: opacity 1s ease-in-out;
+				-ms-transition: opacity 1s ease-in-out;
+				transition: opacity 1s ease-in-out;
+				opacity: 1;
+			}
+
+				#headerl .inner .content h1 {
+					font-size: 4em;
+					font-family: 'Pattaya', sans-serif;
+					margin: 0 0 .25em 0;
+					color: #fff;
+				}
+
+				#headerl .inner .content h2 {
+					font-size: 1.5em;
+					color: #fff;
+					margin: 0 0 1em 0;
+				}
+
+			#headerl .inner .button {
+				-moz-transition: background 1s ease-in-out;
+				-webkit-transition: background 1s ease-in-out;
+				-ms-transition: background 1s ease-in-out;
+				transition: background 1s ease-in-out;
+				margin: 0;
+				border-radius: 30px;
+			}
+
+				#headerl .inner .button.hidden {
+					display: none;
+					cursor: pointer;
+				}
+
+			#headerl .inner.hidden {
+				display: none;
+			}
+
+		#headerl.hide, #headerl.preview {
+			-moz-transition: background 0.2s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+			-webkit-transition: background 0.2s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+			-ms-transition: background 0.2s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+			transition: background 0.2s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+			background: none;
+			height: 0;
+			width: 5%;
+		}
+
+			#headerl.hide .inner, #headerl.preview .inner {
+				height: 6em;
+				width: 6em;
+				padding: 2em;
+			}
+
+				#headerl.hide .inner .content, #headerl.preview .inner .content {
+					opacity: 0;
+				}
+
+					#headerl.hide .inner .content h1, #headerl.preview .inner .content h1 {
+						display: none;
+					}
+
+					#headerl.hide .inner .content h2, #headerl.preview .inner .content h2 {
+						display: none;
+					}
+
+			#headerl.hide .button.big, #headerl.preview .button.big {
+				display: none;
+			}
+
+			#headerl.hide .button.hidden, #headerl.preview .button.hidden {
+				text-decoration: none;
+				padding-top: 1.5em;
+				padding-left: 0;
+				padding-right: 0;
+				background: none;
+				display: inline-block;
+			}
+
+				#headerl.hide .button.hidden:before, #headerl.preview .button.hidden:before {
+					-moz-osx-font-smoothing: grayscale;
+					-webkit-font-smoothing: antialiased;
+					font-family: FontAwesome;
+					font-style: normal;
+					font-weight: normal;
+					text-transform: none !important;
+				}
+
+				#headerl.hide .button.hidden:before, #headerl.preview .button.hidden:before {
+					content: '\f015';
+					color: #FFF;
+					font-size: 1.5em;
+				}
+
+				#headerl.hide .button.hidden span, #headerl.preview .button.hidden span {
+					display: none;
+				}
+
+		@media screen and (max-width: 736px) {
+
+			#headerl .inner {
+				width: 25em;
+				height: 25em;
+				font-size: .75em;
+				padding: 3em;
+			}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			#headerl .inner {
+				width: 26em;
+				height: 26em;
+				padding: 2em;
+				font-size: .65em;
+			}
+
+				#headerl .inner .button {
+					padding-left: 2em;
+					padding-right: 2em;
+				}
+
+		}
+
+
+
+
+	#headerr {
+		/*The Header comes down waali Transition*/
+		-moz-transition: background 1s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+		-webkit-transition: background 1s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+		-ms-transition: background 1s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+		transition: background 1s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		display: -ms-flexbox;
+		-ms-flex-align: center;
+		-ms-flex-pack: center;
+		background: rgba(254, 254, 254, 0.85);
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 10001;
+		right: 0;
+	}
+
+		#headerr .inner {
+			-moz-transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+			-webkit-transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+			-ms-transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+			transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+			display: -ms-flexbox;
+			-ms-flex-align: center;
+			-ms-flex-pack: center;
+			background: #e74c3c;
+			border-radius: 100%;
+			width: 35em;
+			height: 35em;
+			padding: 4em;
+			text-align: center;
+			box-shadow: 0 0 0 1em #FFF;
+			cursor: default;
+		}
+
+			#headerr .inner .content {
+				-moz-transition: opacity 1s ease-in-out;
+				-webkit-transition: opacity 1s ease-in-out;
+				-ms-transition: opacity 1s ease-in-out;
+				transition: opacity 1s ease-in-out;
+				opacity: 1;
+			}
+
+				#headerr .inner .content h1 {
+					font-size: 4em;
+					font-family: 'Pattaya', sans-serif;
+					margin: 0 0 .25em 0;
+					color: #fff;
+				}
+
+				#headerr .inner .content h2 {
+					font-size: 1.5em;
+					color: #fff;
+					margin: 0 0 1em 0;
+				}
+
+			#headerr .inner .button {
+				-moz-transition: background 1s ease-in-out;
+				-webkit-transition: background 1s ease-in-out;
+				-ms-transition: background 1s ease-in-out;
+				transition: background 1s ease-in-out;
+				margin: 0;
+				border-radius: 30px;
+			}
+
+				#headerr .inner .button.hidden {
+					display: none;
+					cursor: pointer;
+				}
+
+			#headerr .inner.hidden {
+				display: none;
+			}
+
+		#headerr.hide, #headerr.preview {
+			-moz-transition: background 0.2s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+			-webkit-transition: background 0.2s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+			-ms-transition: background 0.2s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+			transition: background 0.2s ease-in-out, height 0.2s ease-in-out, width 0.2s ease-in-out;
+			background: none;
+			height: 0;
+			width: 5%;
+			right: 0;
+		}
+
+			#headerr.hide .inner, #headerr.preview .inner {
+				height: 6em;
+				width: 6em;
+				padding: 2em;
+			}
+
+				#headerr.hide .inner .content, #headerr.preview .inner .content {
+					opacity: 0;
+				}
+
+					#headerr.hide .inner .content h1, #headerr.preview .inner .content h1 {
+						display: none;
+					}
+
+					#headerr.hide .inner .content h2, #headerr.preview .inner .content h2 {
+						display: none;
+					}
+
+			#headerr.hide .button.big, #headerr.preview .button.big {
+				display: none;
+			}
+
+			#headerr.hide .button.hidden, #headerr.preview .button.hidden {
+				text-decoration: none;
+				padding-top: 1.5em;
+				padding-left: 0;
+				padding-right: 0;
+				background: none;
+				display: inline-block;
+			}
+
+				#headerr.hide .button.hidden:before, #headerr.preview .button.hidden:before {
+					-moz-osx-font-smoothing: grayscale;
+					-webkit-font-smoothing: antialiased;
+					font-family: FontAwesome;
+					font-style: normal;
+					font-weight: normal;
+					text-transform: none !important;
+				}
+
+				#headerr.hide .button.hidden:before, #headerr.preview .button.hidden:before {
+					content: '\f015';
+					color: #FFF;
+					font-size: 1.5em;
+				}
+
+				#headerr.hide .button.hidden span, #headerr.preview .button.hidden span {
+					display: none;
+				}
+
+		@media screen and (max-width: 736px) {
+
+			#headerr .inner {
+				width: 25em;
+				height: 25em;
+				font-size: .75em;
+				padding: 3em;
+			}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			#headerr .inner {
+				width: 26em;
+				height: 26em;
+				padding: 2em;
+				font-size: .65em;
+			}
+
+				#headerr .inner .button {
+					padding-left: 2em;
+					padding-right: 2em;
+				}
+
+		}
+
+
+
+
+
+
 	#header {
 		-moz-transition: background 1s ease-in-out, height 0.2s ease-in-out;
 		-webkit-transition: background 1s ease-in-out, height 0.2s ease-in-out;
