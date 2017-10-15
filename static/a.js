@@ -13,6 +13,18 @@ $("#incomePop").click(function(){
     });
 })
 
+$("#loanpop").click(function(){
+    $.get(yourUrl+"/getBal/"+thisUser, function(result){
+        $("#resloan").text(result);
+    });
+})
+
+$("#fdpop").click(function(){
+    $.get(yourUrl+"/getBal/"+thisUser, function(result){
+        $("#resfd").text(result);
+    });
+})
+
 $("#startBtn").click(function(){
 	thisUser = $("#myTextMiddle").val();
 	$.get(yourUrl+"/createUser/"+thisUser, function(result){

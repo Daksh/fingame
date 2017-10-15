@@ -167,7 +167,14 @@ function claimonclick(){
 		var txt="1000000";
 	    $.get(yourUrl+"/withdraw/"+thisUser+"/"+txt, function(result){});
 	}
-
+	if(month>=8 && month<=11 && yr==0){
+		var txt="500000";
+	    $.get(yourUrl+"/withdraw/"+thisUser+"/"+txt, function(result){});
+	}
+	if(yr==1){
+		var txt="2000000";
+	    $.get(yourUrl+"/withdraw/"+thisUser+"/"+txt, function(result){});
+	}
 
 	document.getElementById("claimclose").click();
 };
