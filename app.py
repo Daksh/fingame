@@ -85,6 +85,15 @@ def retBal(Name):
 def retInc(Name):
     return str(du[Name].income)
 
+@app.route('/getEvents/<Name>')
+def retOut(Name):
+    return jsonify(du[Name].output)
+
+@app.route('/addEvent/<Name>/<EName>')
+def addOut(Name,EName):
+    du[Name].addEvent(str(EName))
+    return jsonify(status="done")
+
 
 if __name__ == '__main__':
     Timer(180.0,incrementIncome).start()

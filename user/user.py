@@ -7,6 +7,7 @@ class userModel:
 		self.balance = initBalance
 		self.name = name
 		self.income = self.incomeInit
+		self.output=[]
 
 	def withdraw(self, amt):
 		if(self.balance - amt >= 0 ):
@@ -16,3 +17,6 @@ class userModel:
 	def deposit(self, amt):
 		self.balance += amt
 		return self.balance
+
+	def addEvent(self, stringX):
+		self.output.append(stringX)
