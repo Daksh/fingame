@@ -7,6 +7,11 @@ $("#accountPop").click(function(){
     });
 });
 
+$("#incomePop").click(function(){
+	$.get(yourUrl+"/getIncome/"+thisUser, function(result){
+		$("#res3").text(result);
+    });
+})
 
 $("#startBtn").click(function(){
 	thisUser = $("#myTextMiddle").val();
