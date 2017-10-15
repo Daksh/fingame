@@ -90,18 +90,18 @@
         </button>
       </div>
       <div class="modal-body">
-      	Balance: <a id="res2">{{amnt}}</a><br>
+      	Balance: <a id="resfd">{{amnt}}</a><br>
         Amount: <input id="inp" type="text" placeholder="0">
         Time Period: 
         <select>
 		  <option value="2">2 Years</option>
 		  <option value="4">4 Years</option>
 		</select><br>
-		Current FD: ADD_Viresh
+		Current FD: 
       </div>
       <div class="modal-footer">
         <button type="button" id="depos2" class="btn btn-primary">Deposit</button>
-        <button type="button" id="withd2" class="btn btn-primary">Withdraw</button>
+        <button type="button" id="withd2" class="btn btn-primary">Cancel FD</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -118,7 +118,7 @@
         </button>
       </div>
       <div class="modal-body">
-      	Balance: <a id="res2">{{amnt}}</a><br>
+      	Balance: <a id="resloan">{{amnt}}</a><br>
         Amount: <input id="inp" type="text" placeholder="0">
       </div>
       <div class="modal-footer">
@@ -174,6 +174,7 @@
 					<div class="content">
 						<h1 id="textRight">Me</h1>
 						<h2>Balance : <a id="rightBal"></a></h2>
+						<h2>Log: <a id="rightLog"></a></h2>
 						<a href="#" class="button big alt"><span>Close</span></a>
 					</div>
 					<a href="#" id="rightSideToggle" class="button hidden"><span>Let's Go</span></a>
@@ -186,6 +187,7 @@
 					<div class="content">
 						<h1 id="textLeft" >Other</h1>
 						<h2>Balance : <a id="leftBal"></a> </h2>
+						<h2>Log: <a id="leftLog"></a></h2>				
 						<a href="#" class="button big alt"><span>Close</span></a>
 					</div>
 					<a href="#" id="leftSideToggle" class="button hidden"><span>Let's Go</span></a>
@@ -216,7 +218,7 @@
 								<a href="#" data-toggle="modal" data-target="#accountModal"><img id="accountPop" src="../static/images/pic01.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#fdModal" ><img src="../static/images/pic02.jpg" alt="" /></as>
+								<a href="#" data-toggle="modal" data-target="#fdModal" id="fdpop"><img src="../static/images/pic02.jpg" alt="" /></as>
 							</div>
 							<div class="image fit">
 								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic03.jpg" alt="" /></a>
@@ -230,7 +232,7 @@
 								<a href="#" data-toggle="modal" data-target="#incomeModal"><img id="incomePop" src="../static/images/pic06.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#loanModal"><img src="../static/images/pic05.jpg" alt="" /></a>
+								<a href="#" id="loanpop" data-toggle="modal" data-target="#loanModal"><img src="../static/images/pic05.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
 								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic08.jpg" alt="" /></a>

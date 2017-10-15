@@ -139,7 +139,7 @@ function myTime()
 	yr=parseInt(count/12);
 	month=parseInt(count-yr*12);
 	document.getElementById("htime").innerHTML = "Time = "+yr+" Years, "+ month+" Months";
-	if((month)%4==0 && (yr<2))
+	if(((month)%4==0 && (yr<1))||(month==0 && yr==1))
 	{
 		// alert("Month mod 4");
 		modalcall();
@@ -147,6 +147,12 @@ function myTime()
 	}
 	if(month==4 && yr==0){
 		document.getElementById("oppr").innerHTML = "There is a chartered plane costing 10 Lakh Rupees, Do you wanna buy it?";
+	}
+	else if(month==8 && yr==0){
+		document.getElementById("oppr").innerHTML = "A helping-the-poor NGO needs Rs.5 Lakhs immediately, Will you donate?";
+	}
+	else if(month==0 && yr==1){
+		document.getElementById("oppr").innerHTML = "A world tour offer costs Rs. 20 Lakhs. Do you wanna claim it?";
 	}
 };
 function modalcall(){
@@ -156,9 +162,19 @@ function modalcall(){
 
 function claimonclick(){
 	alert("You have Claimed It!");
+
 	if(month>=4 && month<=6 && yr==0){
 		var txt="1000000";
 	    $.get(yourUrl+"/withdraw/"+thisUser+"/"+txt, function(result){});
 	}
+	if(month>=8 && month<=11 && yr==0){
+		var txt="500000";
+	    $.get(yourUrl+"/withdraw/"+thisUser+"/"+txt, function(result){});
+	}
+	if(yr==1){
+		var txt="2000000";
+	    $.get(yourUrl+"/withdraw/"+thisUser+"/"+txt, function(result){});
+	}
+
 	document.getElementById("claimclose").click();
 };

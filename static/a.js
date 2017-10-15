@@ -13,6 +13,18 @@ $("#incomePop").click(function(){
     });
 })
 
+$("#loanpop").click(function(){
+    $.get(yourUrl+"/getBal/"+thisUser, function(result){
+        $("#resloan").text(result);
+    });
+})
+
+$("#fdpop").click(function(){
+    $.get(yourUrl+"/getBal/"+thisUser, function(result){
+        $("#resfd").text(result);
+    });
+})
+
 $("#startBtn").click(function(){
 	thisUser = $("#myTextMiddle").val();
 	$.get(yourUrl+"/createUser/"+thisUser, function(result){
@@ -28,15 +40,20 @@ $("#leftSideToggle").click(function(){
 });
 
 $("#rightSideToggle").click(function(){
+    var pl = "";
 	$.get(yourUrl+"/getOtherPlayer/"+thisUser, function(result){
 		if(result.hasOwnProperty('error')){
 			$("#textRight").text(result["error"]);
 		}
 		else{
+            pl = result["other"];
 			$("#textRight").text(result["other"]);
 			$("#rightBal").text(result["balance"]);
 		}
 		
+    });
+    $.get(yourUrl+"/getEvents/"+pl, function(result){
+        $("#leftLog").text(result);
     });
 });
 
