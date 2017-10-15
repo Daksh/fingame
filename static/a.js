@@ -1,5 +1,17 @@
-yourUrl = "http://192.168.2.14:8080";
+yourUrl = "http://192.168.43.220:8080";
 var thisUser = "Blank"
+
+$("#accountPop").click(function(){
+	$.get(yourUrl+"/getBal/"+thisUser, function(result){
+		$("#res").text(result);
+    });
+});
+
+$("#incomePop").click(function(){
+	$.get(yourUrl+"/getIncome/"+thisUser, function(result){
+		$("#res3").text(result);
+    });
+})
 
 $("#startBtn").click(function(){
 	thisUser = $("#myTextMiddle").val();

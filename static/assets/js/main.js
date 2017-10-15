@@ -139,7 +139,7 @@ function myTime()
 	yr=parseInt(count/12);
 	month=parseInt(count-yr*12);
 	document.getElementById("htime").innerHTML = "Time = "+yr+" Years, "+ month+" Months";
-	if((month)%4==0 && (year<2))
+	if((month)%4==0 && (yr<2))
 	{
 		// alert("Month mod 4");
 		modalcall();

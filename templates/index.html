@@ -57,7 +57,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -67,12 +67,99 @@
         </button>
       </div>
       <div class="modal-body">
-      	Balance: <a id="res">{{amnt}}</a>
+      	Balance: <a id="res">{{amnt}}</a><br>
         Amount: <input id="inp" type="text" placeholder="0">
       </div>
       <div class="modal-footer">
         <button type="button" id="depos" class="btn btn-primary">Deposit</button><!---->
         <button type="button" id="withd" class="btn btn-primary">Withdraw</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="fdModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Fixed Deposit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	Balance: <a id="res2">{{amnt}}</a><br>
+        Amount: <input id="inp" type="text" placeholder="0">
+        Time Period: 
+        <select>
+		  <option value="2">2 Years</option>
+		  <option value="4">4 Years</option>
+		</select><br>
+		Current FD: ADD_Viresh
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="depos2" class="btn btn-primary">Deposit</button>
+        <button type="button" id="withd2" class="btn btn-primary">Withdraw</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="loanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Loan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	Balance: <a id="res2">{{amnt}}</a><br>
+        Amount: <input id="inp" type="text" placeholder="0">
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="loan" class="btn btn-primary">Take it on Loan!</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="lockedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Locked</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  	You can move on to the next stages, only once you have mastered this level.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="incomeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Income</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  	Your current monthly income is <a id="res3"></a>
+      </div>
+      <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -112,6 +199,7 @@
 						<h1>Login</h1>
 						<h2>Username <input type = "text" id = "myTextMiddle" value = "Name" /> </h2>
 						<a href="#" class="button big alt" id="startBtn"><span>Let's Go</span></a>
+						<!--<button type="button" href="#" class="button big alt" id="startBtn">Let's Go</button>-->
 					</div>
 					<a href="#" class="button hidden"><span>Let's Go</span></a>
 				</div>
@@ -124,44 +212,44 @@
 
 						<!-- Column 1 (horizontal, vertical, horizontal, vertical) -->
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal1"><img src="../static/images/pic01.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#accountModal"><img id="accountPop" src="../static/images/pic01.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal" ><img src="../static/images/pic02.jpg" alt="" /></as>
+								<a href="#" data-toggle="modal" data-target="#fdModal" ><img src="../static/images/pic02.jpg" alt="" /></as>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic03.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic03.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic04.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic04.jpg" alt="" /></a>
 							</div>
 
 						<!-- Column 2 (vertical, horizontal, vertical, horizontal) -->
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic06.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#incomeModal"><img id="incomePop" src="../static/images/pic06.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic05.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#loanModal"><img src="../static/images/pic05.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic08.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic08.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic07.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic07.jpg" alt="" /></a>
 							</div>
 
 						<!-- Column 3 (horizontal, vertical, horizontal, vertical) -->
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic09.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic09.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic12.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic12.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic11.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic11.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic10.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic10.jpg" alt="" /></a>
 							</div>
 
 						<!-- Column 4 (vertical, horizontal, vertical, horizontal) -->
@@ -169,13 +257,13 @@
 								<!--<a href="#" data-toggle="modal" data-target="#exampleModal">--><a href="#" onclick="TmyFunction()"><img src="../static/images/pic13.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic14.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic14.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic15.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic15.jpg" alt="" /></a>
 							</div>
 							<div class="image fit">
-								<a href="#" data-toggle="modal" data-target="#exampleModal"><img src="../static/images/pic16.jpg" alt="" /></a>
+								<a href="#" data-toggle="modal" data-target="#lockedModal"><img src="../static/images/pic16.jpg" alt="" /></a>
 							</div>
 
 					</div>

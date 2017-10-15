@@ -3,6 +3,7 @@ import datetime
 import time
 import os
 from user.user import userModel
+from threading import Timer
 
 app = Flask(__name__)
 app.secret_key="MadeByViresh"
@@ -15,6 +16,17 @@ def getOtherPlayer(name):
         if(x!=name):
             return x
     return None
+
+def incrementIncome():
+    for x in du:
+        du[x].incomeInit = du[x].incomeInit * 1.1
+    Timer(180, incrementIncome).start()
+
+def incomeChange():
+    print("Incremented.")
+    for x in du:
+        du[x].balance = du[x].balance + du[x].incomeInit
+    Timer(15, incomeChange).start()
 
 @app.route('/')
 def home():
@@ -41,7 +53,7 @@ def hello():
 
 @app.route('/createUser/<Name>')
 def makeUser(Name):
-    u = userModel(10000,Name)
+    u = userModel(1200000,Name)
     du[Name] = u
     return jsonify(balance=u.balance,status="done")
 
@@ -69,7 +81,13 @@ def deposit(Name,Amt):
 def retBal(Name):
     return str(du[Name].balance)
 
+@app.route('/getIncome/<Name>')
+def retInc(Name):
+    return str(du[Name].income)
+
 
 if __name__ == '__main__':
+    Timer(180.0,incrementIncome).start()
+    Timer(15.0,incomeChange).start()
     app.run(host='0.0.0.0',port=port)
 
