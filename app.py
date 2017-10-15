@@ -29,6 +29,10 @@ def incomeChange():
     Timer(15, incomeChange).start()
 
 @app.route('/')
+def mainHome():
+    return render_template('home.html')
+
+@app.route('/logon')
 def home():
     return render_template('index.html',amnt=0)
 
