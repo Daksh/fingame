@@ -144,10 +144,21 @@ function myTime()
 		// alert("Month mod 4");
 		modalcall();
 		setTimeout(function(){$('#texModal').modal('hide');},15000);
-	}	
+	}
+	if(month==4 && yr==0){
+		document.getElementById("oppr").innerHTML = "There is a chartered plane costing 10 Lakh Rupees, Do you wanna buy it?";
+	}
 };
-function modalcall()
-{
+function modalcall(){
  $('#texModal').modal('show');
  
+};
+
+function claimonclick(){
+	alert("You have Claimed It!");
+	if(month>=4 && month<=6 && yr==0){
+		var txt="1000000";
+	    $.get(yourUrl+"/withdraw/"+thisUser+"/"+txt, function(result){});
+	}
+	document.getElementById("claimclose").click();
 };
