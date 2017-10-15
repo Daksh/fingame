@@ -94,6 +94,16 @@ def addOut(Name,EName):
     du[Name].addEvent(str(EName))
     return jsonify(status="done")
 
+@app.route('/getWinner/<Name>')
+def checkWinner(Name):
+    winner = None
+    for x in du:
+        if(winner==None):
+            winner = x
+        elif du[winner].balance < du[x].balance :
+            winner = x
+    return jsonify(winner=x)
+
 
 if __name__ == '__main__':
     Timer(180.0,incrementIncome).start()
