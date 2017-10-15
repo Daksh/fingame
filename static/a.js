@@ -10,6 +10,22 @@ $("#startBtn").click(function(){
 
 $("#leftSideToggle").click(function(){
 	$("#textLeft").text(thisUser);
+	$.get(yourUrl+"/getBal/"+thisUser, function(result){
+		$("#leftBal").text(result);
+    });
+});
+
+$("#rightSideToggle").click(function(){
+	$.get(yourUrl+"/getOtherPlayer/"+thisUser, function(result){
+		if(result.hasOwnProperty('error')){
+			$("#textRight").text(result["error"]);
+		}
+		else{
+			$("#textRight").text(result["other"]);
+			$("#rightBal").text(result["balance"]);
+		}
+		
+    });
 });
 
 

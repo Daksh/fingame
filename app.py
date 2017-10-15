@@ -10,9 +10,26 @@ port = int(os.getenv('VCAP_APP_PORT', 8080))
 
 du = {}     # This is a dictionary of users
 
+def getOtherPlayer(name):
+    for x in du:
+        if(x!=name):
+            return x
+    return None
+
 @app.route('/')
 def home():
     return render_template('index.html',amnt=0)
+
+@app.route('/numUsers')
+def numU():
+    return str(len(du))
+
+@app.route('/getOtherPlayer/<Name>')
+def otherPl(Name):
+    y = getOtherPlayer(Name)
+    if(y!=None):
+        return jsonify(other=y,balance=du[y].balance)
+    return jsonify(error="No other User")
 
 @app.route('/<Name>')
 def omg(Name):
