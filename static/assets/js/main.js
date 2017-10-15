@@ -122,3 +122,32 @@
 	});
 
 })(jQuery);
+
+
+var count=0;
+var yr=0;
+var month=0;
+function TmyFunction()
+{	
+	// alert("Way to go!");
+	document.getElementById("htime").innerHTML = "Time = "+yr+" Years, "+ month+" Months";
+	setInterval(myTime,15000);
+};
+function myTime()
+{
+	count=count+1;
+	yr=parseInt(count/12);
+	month=parseInt(count-yr*12);
+	document.getElementById("htime").innerHTML = "Time = "+yr+" Years, "+ month+" Months";
+	if((month)%4==0 && (year<2))
+	{
+		// alert("Month mod 4");
+		modalcall();
+		setTimeout(function(){$('#texModal').modal('hide');},15000);
+	}	
+};
+function modalcall()
+{
+ $('#texModal').modal('show');
+ 
+};
